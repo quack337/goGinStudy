@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="utf-8">
+    <title>안녕 gin</title>
+  </head>
+  <body>
+    <form method="post">
+      <input name="name" value="{{ .person.Name }}" />
+      <input name="age" value="{{ .person.Age }}" />
+      <button>save</button>
+      <pre>
+        {{ .person.Name }}, {{ .person.Age }}
+      </pre>
+    </form>
+  </body>
+</html>
