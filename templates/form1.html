@@ -6,12 +6,28 @@
   </head>
   <body>
     <form method="post">
-      <input name="name" value="{{ .person.Name }}" />
-      <input name="age" value="{{ .person.Age }}" />
-      <button>save</button>
-      <pre>
-        {{ .person.Name }}, {{ .person.Age }}
-      </pre>
+      <p> <input name="name" value="{{ .person.Name }}" /> </p>
+      <p> <input name="age" value="{{ .person.Age }}" /> </p> 
+      <p> <input type="checkbox" name="enabled" {{ checked .person.Enabled }} value="true" /> enabled </p> 
+      <p>
+        <select name="color">
+          <option {{ selected (eq .person.Color "yellow") }}>yellow</option>
+          <option {{ selected (eq .person.Color "red") }}>red</option>
+          <option {{ selected (eq .person.Color "green") }}>green</option>
+        </select>
+      </p>
+      <p>
+        <select name="num">
+          <option {{ selected (eq .person.Num 1) }}>1</option>
+          <option {{ selected (eq .person.Num 2) }}>2</option>
+          <option {{ selected (eq .person.Num 3) }}>3</option>
+        </select>
+      </p>
+      <p> <button>save</button> </p> 
+      <p>
+        {{ .person.Name }}, {{ .person.Age }}, {{ .person.Enabled }}
+        , {{ .person.Color }}, {{ .person.Num }}
+      </p>
     </form>
   </body>
 </html>
